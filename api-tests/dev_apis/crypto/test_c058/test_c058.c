@@ -139,7 +139,7 @@ int32_t psa_aead_update_test(caller_security_t caller __UNUSED)
             TEST_ASSERT_EQUAL(status, PSA_ERROR_BAD_STATE, TEST_CHECKPOINT_NUM(9));
         } else {
             /* Compare the output and its length with the expected values */
-            TEST_ASSERT_RANGE(output_length, 0, check1[i].expected_output_length,
+            TEST_ASSERT_EQUAL(output_length, check1[i].expected_output_length,
                               TEST_CHECKPOINT_NUM(10));
             TEST_ASSERT_MEMCMP(check1[i].output, check1[i].expected_output, output_length,
                                TEST_CHECKPOINT_NUM(11));
